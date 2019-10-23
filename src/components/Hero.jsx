@@ -1,7 +1,7 @@
 import React from "react";
 
-const Hero = ({ childreh, hero }) => {
-  return <header className={hero}>{childreh}</header>;
+const Hero = ({ children, hero }) => {
+  return <header className={hero}>{children}</header>;
 };
 
 export default Hero;
