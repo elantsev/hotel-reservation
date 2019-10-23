@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import Hero from "../components/Hero";
-import Banner from "../components/Banner";
-import { Link } from "react-router-dom";
 import Title from "./Title";
 import { FaCocktail, FaHiking, FaShuttleVan, FaBeer } from "react-icons/fa";
 
@@ -32,7 +29,7 @@ const initialServices = [
   }
 ];
 const Services = () => {
-  const [services, setServices] = useState(initialServices);
+  const [services] = useState(initialServices);
   return (
     <section className="services">
       <Title title="services" />
