@@ -5,6 +5,7 @@ const Hero = ({ children, hero }) => {
 };
 
 export default Hero;
+
 Hero.defaultProps = {
   hero: "defaultHero"
 };
