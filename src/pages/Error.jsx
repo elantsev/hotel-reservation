@@ -1,17 +1,18 @@
 import React from "react";
-import Hero from "../components/Hero";
+import StyledHero from "../components/StyledHero";
 import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
+import img from "../images/defaultBcg.jpeg";
 
 const Error = () => {
   return (
-    <Hero>
+    <StyledHero big img={img}>
       <Banner title="404" subtitle="page not found">
         <Link to="/" className="btn-primary">
           return home
         </Link>
       </Banner>
-    </Hero>
+    </StyledHero>
   );
 };
 
