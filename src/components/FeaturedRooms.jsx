@@ -1,25 +1,25 @@
-import React, { Component } from "react";
+import React from "react";
 import Title from "./Title";
-import { RoomContext } from "../context";
 import Room from "./Room";
 import Loading from "./Loading";
+import { useSelector } from "react-redux";
 
-export default class FeaturedRooms extends Component {
-  static contextType = RoomContext;
+const FeaturedRooms = () => {
+  let rooms = useSelector(state => state.state.featuredRooms);
+  const loading = useSelector(state => state.state.loading);
 
-  render() {
-    let { loading, featuredRooms: rooms } = this.context;
+  rooms = rooms.map(room => {
+    return <Room key={room.id} room={room} />;
+  });
 
-    rooms = rooms.map(room => {
-      return <Room key={room.id} room={room} />;
-    });
-    return (
-      <section className="featured-rooms">
-        <Title title="featured rooms" />
-        <div className="featured-rooms-center">
-          {loading ? <Loading /> : rooms}
-        </div>
-      </section>
-    );
-  }
-}
+  return (
+    <section className="featured-rooms">
+      <Title title="featured rooms" />
+      <div className="featured-rooms-center">
+        {loading ? <Loading /> : rooms}
+      </div>
+    </section>
+  );
+};
+
+export default FeaturedRooms;
