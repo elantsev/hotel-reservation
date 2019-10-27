@@ -12,7 +12,6 @@ const RoomsFilter = ({ rooms }) => {
   const state = useSelector(state => state.state);
   const dispatch = useDispatch();
   const handleChange = e => dispatch(filterRooms(e));
-  // react hooks
   const {
     type,
     capacity,

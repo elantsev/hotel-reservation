@@ -5,19 +5,17 @@ import { Link } from "react-router-dom";
 import RoomContainer from "../components/RoomContainer";
 import img from "../images/room-2.jpeg";
 
-const Rooms = () => {
-  return (
-    <>
-      <StyledHero img={img}>
-        <Banner title="our room">
-          <Link to="/" className="btn-primary">
-            return home
-          </Link>
-        </Banner>
-      </StyledHero>
-      <RoomContainer />
-    </>
-  );
-};
+const Rooms = () => (
+  <>
+    <StyledHero img={img}>
+      <Banner title="our room">
+        <Link to="/" className="btn-primary">
+          return home
+        </Link>
+      </Banner>
+    </StyledHero>
+    <RoomContainer />
+  </>
+);
 
 export default Rooms;

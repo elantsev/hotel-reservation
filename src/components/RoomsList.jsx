@@ -1,5 +1,6 @@
 import React from "react";
 import Room from "./Room";
+
 const RoomsList = ({ rooms }) => {
   if (rooms.length === 0) {
     return (
@@ -11,9 +12,9 @@ const RoomsList = ({ rooms }) => {
   return (
     <section className="roomslist">
       <div className="roomslist-center">
-        {rooms.map(item => {
-          return <Room key={item.id} room={item} />;
-        })}
+        {rooms.map(item => (
+          <Room key={item.id} room={item} />
+        ))}
       </div>
     </section>
   );

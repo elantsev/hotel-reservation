@@ -6,20 +6,18 @@ import Services from "../components/Services";
 import FeaturedRooms from "../components/FeaturedRooms";
 import img from "../images/defaultBcg.jpeg";
 
-const Home = () => {
-  return (
-    <>
-      <StyledHero big img={img}>
-        <Banner title="luxurious room" subtitle="deluxe rooms starting at 299$">
-          <Link to="/rooms" className="btn-primary">
-            our rooms
-          </Link>
-        </Banner>
-      </StyledHero>
-      <Services />
-      <FeaturedRooms />
-    </>
-  );
-};
+const Home = () => (
+  <>
+    <StyledHero big img={img}>
+      <Banner title="luxurious room" subtitle="deluxe rooms starting at 299$">
+        <Link to="/rooms" className="btn-primary">
+          our rooms
+        </Link>
+      </Banner>
+    </StyledHero>
+    <Services />
+    <FeaturedRooms />
+  </>
+);
 
 export default Home;

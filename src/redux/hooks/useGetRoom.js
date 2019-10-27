@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-export function useGetRoom(slug) {
+export function useGetRoom() {
   let { rooms } = useSelector(state => state.state);
 
   const getRoom = slug => {
@@ -8,7 +8,6 @@ export function useGetRoom(slug) {
     const room = tempRooms.find(room => room.slug === slug);
     return room;
   };
-  getRoom(slug);
 
   return getRoom;
 }

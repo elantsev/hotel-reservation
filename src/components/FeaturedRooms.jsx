@@ -8,9 +8,7 @@ const FeaturedRooms = () => {
   let rooms = useSelector(state => state.state.featuredRooms);
   const loading = useSelector(state => state.state.loading);
 
-  rooms = rooms.map(room => {
-    return <Room key={room.id} room={room} />;
-  });
+  rooms = rooms.map(room => <Room key={room.id} room={room} />);
 
   return (
     <section className="featured-rooms">
