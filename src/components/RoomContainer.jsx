@@ -1,11 +1,11 @@
 import React from "react";
-import { withRoomConsumer } from "../context";
 import Loading from "./Loading";
 import RoomsFilter from "./RoomsFilter";
 import RoomsList from "./RoomsList";
+import { useSelector } from "react-redux";
 
-function RoomContainer({ context }) {
-  const { loading, sortedRooms, rooms } = context;
+function RoomContainer() {
+  const { loading, sortedRooms, rooms } = useSelector(state => state.state);
   if (loading) {
     return <Loading />;
   }
@@ -17,4 +17,4 @@ function RoomContainer({ context }) {
   );
 }
 
-export default withRoomConsumer(RoomContainer);
+export default RoomContainer;
