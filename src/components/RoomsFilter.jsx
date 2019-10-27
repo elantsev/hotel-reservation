@@ -1,17 +1,19 @@
 import React from "react";
-import { useContext } from "react";
-import { RoomContext } from "../context";
 import Title from "./Title";
+import { useSelector, useDispatch } from "react-redux";
+import { filterRooms } from "../redux/actions/state";
+
 // get all unique values
 const getUnique = (items, value) => [
   ...new Set(items.map(item => item[value]))
 ];
 
 const RoomsFilter = ({ rooms }) => {
+  const state = useSelector(state => state.state);
+  const dispatch = useDispatch();
+  const handleChange = e => dispatch(filterRooms(e));
   // react hooks
-  const context = useContext(RoomContext);
   const {
-    handleChange,
     type,
     capacity,
     price,
@@ -21,7 +23,7 @@ const RoomsFilter = ({ rooms }) => {
     maxSize,
     breakfast,
     pets
-  } = context;
+  } = state;
 
   // get unique types
   let types = getUnique(rooms, "type");

@@ -1,17 +1,8 @@
-import { API_KEY } from "../API_KEY";
+export const FILTER_ROOMS = "FILTER_ROOMS";
 
-export function fetchTech() {
-  return async function(dispatch) {
-    try {
-      let response = await fetch(
-        `https://newsapi.org/v1/articles?source=the-verge&sortBy=top&apiKey=${API_KEY}`
-      );
-      if (response.status === 200) {
-        response = await response.json();
-        dispatch({ type: "FETCH_TECH", payload: response.articles });
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+export function filterRooms(event) {
+  const target = event.target;
+  const value = target.type === "checkbox" ? target.checked : target.value;
+  const name = target.name;
+  return { type: "FILTER_ROOMS", payload: { name, value } };
 }
